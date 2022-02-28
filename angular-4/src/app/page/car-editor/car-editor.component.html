@@ -1,0 +1,91 @@
+<div class="row">
+  <div *ngIf="car$ | async as car" class="col-6 offset-3">
+    <form
+      #carForm="ngForm"
+      class="form">
+      <input [(ngModel)]="car.id" type="hidden" name="id">
+
+
+      <div class="form-group">
+        <label  for="name"> Model </label>
+        <input
+          [(ngModel)]="car.model"
+          class="form-control"
+          name="model"
+          id="model"
+          type="text"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label  for="name"> Make </label>
+        <input
+          [(ngModel)]="car.make"
+          class="form-control"
+          name="make"
+          id="make"
+          type="text"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label  for="name"> Year </label>
+        <input
+          [(ngModel)]="car.year"
+          class="form-control"
+          name="year"
+          id="year"
+          type="number"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label  for="name"> Price </label>
+        <input
+          [(ngModel)]="car.price"
+          class="form-control"
+          name="price"
+          id="price"
+          type="number"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label  for="name"> Price </label>
+        <input
+          [(ngModel)]="car.price"
+          class="form-control"
+          name="price"
+          id="price"
+          type="number"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label  for="name"> Stock </label>
+        <input
+          [(ngModel)]="car.stock"
+          class="form-control"
+          name="stock"
+          id="stock"
+          type="number"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label  for="name"> Active </label>
+        <input
+          [(ngModel)]="car.active"
+          class="form-control"
+          name="stock"
+          id="stock"
+          type="text"
+          required>
+      </div>
+
+      <button [disabled]="carForm.invalid" class="btn btn-info btn-block">
+        <i class="fa fa-save">
+      </i></button>
+    </form>
+  </div>
+</div>
