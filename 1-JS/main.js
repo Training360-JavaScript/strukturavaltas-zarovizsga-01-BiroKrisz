@@ -60,8 +60,21 @@ const animals = [{
     "zoo": 9
   }];
 
+function compare( a, b ) {
+    if ( a.common_name < b.common_name ){
+      return -1;
+    }
+    if ( a.common_name > b.common_name ){
+      return 1;
+    }
+    return 0;
+  }
+  
+
 const animalFilter = (list = animals, pop, zoo) => {
-    return [];
+    const filteredList = list.filter( animal => animal.population > pop).filter( animal => animal.zoo <= zoo)
+    const sortedList = filteredList.sort(compare)
+    return sortedList.map(item => item.common_name)
 };
 
 if (typeof module !== 'undefined') {
