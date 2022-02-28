@@ -1,1 +1,37 @@
-<p>app works!</p>
+<div class="row">
+  <div class="col-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Material</th>
+          <th>Trade</th>
+          <th>Cost Code</th>
+          <th>Price</th>
+          <th>Active</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let con of list$ | async">
+          <td> {{ con.id }} </td>
+          <td> {{ con.material }} </td>
+          <td> {{ con.trade }} </td>
+          <td> {{ con.cost_code }} </td>
+          <td> {{ con.price }} </td>
+          <td> {{ con.active }} </td>
+          <td>
+            <button (click)="onDelete(con)" class="btn btn-info"><i class="fa fa-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+id: number = 0;
+material: string = '';
+trade: string = '';
+cost_code: string = '';
+price: number = 0;
+active: boolean = true;
