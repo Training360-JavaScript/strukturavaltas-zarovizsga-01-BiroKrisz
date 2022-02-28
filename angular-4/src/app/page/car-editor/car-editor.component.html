@@ -14,76 +14,72 @@
           name="model"
           id="model"
           type="text"
-          required>
+          pattern="^[A-Z][a-z0-9 ]{1,14}$"
+          required
+          >
       </div>
 
       <div class="form-group">
-        <label  for="name"> Make </label>
+        <label  for="make"> Make </label>
         <input
           [(ngModel)]="car.make"
           class="form-control"
           name="make"
           id="make"
           type="text"
-          required>
+          required
+          pattern="^[A-Z][a-zA-Z]{2,19}$"
+          >
       </div>
 
       <div class="form-group">
-        <label  for="name"> Year </label>
+        <label  for="year"> Year </label>
         <input
           [(ngModel)]="car.year"
           class="form-control"
           name="year"
           id="year"
           type="number"
-          required>
+          required
+          pattern="^\d{4}$">
       </div>
 
       <div class="form-group">
-        <label  for="name"> Price </label>
+        <label  for="price"> Price </label>
         <input
           [(ngModel)]="car.price"
           class="form-control"
           name="price"
           id="price"
           type="number"
-          required>
+          required
+          pattern="^\d{3,5}$">
       </div>
 
       <div class="form-group">
-        <label  for="name"> Price </label>
-        <input
-          [(ngModel)]="car.price"
-          class="form-control"
-          name="price"
-          id="price"
-          type="number"
-          required>
-      </div>
-
-      <div class="form-group">
-        <label  for="name"> Stock </label>
+        <label  for="stock"> Stock </label>
         <input
           [(ngModel)]="car.stock"
           class="form-control"
           name="stock"
           id="stock"
           type="number"
-          required>
+          required
+          min="1" max="50">
       </div>
 
-      <div class="form-group">
-        <label  for="name"> Active </label>
-        <input
+      <div class="form-check">
+        <label class="form-check-label" for="active">
+          Active
+        </label>
+        <input class="form-check-input"
+          type="checkbox"
           [(ngModel)]="car.active"
-          class="form-control"
-          name="stock"
-          id="stock"
-          type="text"
-          required>
+          id="active"
+          name="active">
       </div>
 
-      <button [disabled]="carForm.invalid" class="btn btn-info btn-block">
+      <button (click)="onUpdate(car)" [disabled]="carForm?.invalid" class="btn btn-info btn-block">
         <i class="fa fa-save">
       </i></button>
     </form>
